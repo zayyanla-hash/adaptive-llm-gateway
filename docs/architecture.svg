@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">Adaptive LLM Gateway architecture</title>
+  <desc id="desc">Requests are validated, scored and gated, routed through providers with retries and fallbacks, and recorded in traces and telemetry.</desc>
+  <style>text{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;fill:#172033}.box{fill:#f5f7fb;stroke:#52627a;stroke-width:2}.gate{fill:#fff4d6;stroke:#b7791f;stroke-width:2}.out{fill:#e6fffa;stroke:#258f82;stroke-width:2}.arrow{stroke:#52627a;stroke-width:2;marker-end:url(#m)}</style>
+  <defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#52627a"/></marker></defs>
+  <rect class="box" x="20" y="120" width="150" height="90" rx="14"/><text x="95" y="156" text-anchor="middle" font-size="18" font-weight="700">Request</text><text x="95" y="182" text-anchor="middle" font-size="14">SDK / HTTP</text>
+  <line class="arrow" x1="170" y1="165" x2="210" y2="165"/>
+  <rect class="box" x="210" y="120" width="175" height="90" rx="14"/><text x="297" y="156" text-anchor="middle" font-size="18" font-weight="700">Validate</text><text x="297" y="182" text-anchor="middle" font-size="14">typed task request</text>
+  <line class="arrow" x1="385" y1="165" x2="425" y2="165"/>
+  <rect class="gate" x="425" y="120" width="175" height="90" rx="14"/><text x="512" y="156" text-anchor="middle" font-size="18" font-weight="700">Score + gate</text><text x="512" y="182" text-anchor="middle" font-size="14">privacy · SLO · tools</text>
+  <line class="arrow" x1="600" y1="165" x2="640" y2="165"/>
+  <rect class="box" x="640" y="120" width="175" height="90" rx="14"/><text x="727" y="156" text-anchor="middle" font-size="18" font-weight="700">Route</text><text x="727" y="182" text-anchor="middle" font-size="14">retry + fallback chain</text>
+  <line class="arrow" x1="815" y1="165" x2="855" y2="165"/>
+  <rect class="box" x="855" y="120" width="145" height="90" rx="14"/><text x="927" y="156" text-anchor="middle" font-size="18" font-weight="700">Providers</text><text x="927" y="182" text-anchor="middle" font-size="14">local + cloud</text>
+  <line class="arrow" x1="1000" y1="165" x2="1040" y2="165"/>
+  <rect class="out" x="1040" y="120" width="140" height="90" rx="14"/><text x="1110" y="156" text-anchor="middle" font-size="18" font-weight="700">Trace</text><text x="1110" y="182" text-anchor="middle" font-size="14">telemetry + escalate</text>
+  <text x="600" y="285" text-anchor="middle" font-size="15" fill="#52627a">Hard safety gates stay outside the soft model score.</text>
+</svg>

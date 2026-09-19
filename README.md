@@ -14,7 +14,13 @@ routing, telemetry, and structured escalation.
 - **Eval:** committed offline fixtures + harness producing `eval/eval-results.json` (machine-readable)
   and `eval/REPORT.md` (human-readable). Synthetic mocks only — **no live benchmark claims**.
 
+**Status:** public, mock-first V1 infrastructure reference implementation. The
+catalog, traces, and evaluation fixtures are synthetic; no provider credentials or
+private customer data are included.
+
 ## Architecture
+
+![Adaptive gateway architecture](docs/architecture.svg)
 
 ```mermaid
 flowchart TB
@@ -186,6 +192,14 @@ python -m compileall -q src eval demo tests  # build check (stdlib-only project)
 - No persistence: telemetry/history/health reset on restart (in-memory by design for V1).
 - No auth/rate-limiting on the HTTP service; run behind a gateway for multi-tenant use.
 - Weights are static defaults; no online learning yet (history EWMA is the only adaptive memory).
+
+## Recruiter lens
+
+This project demonstrates production-oriented AI infrastructure concerns rather than
+just a model wrapper: hard privacy and capability gates, deterministic routing
+traces, bounded retries and fallbacks, health-aware selection, and structured
+escalation when no safe model is available. It is a V1 reference implementation,
+not a claim of hosted multi-tenant production scale.
 
 ## Roadmap
 
