@@ -67,8 +67,8 @@ Requires Python ≥ 3.10. No inference servers, no API keys, no paid APIs — ev
 
 ```bash
 # 1. Run the service
-python -m adaptive_gateway --port 8080   # src/ on path via pip install -e . OR:
-PYTHONPATH=src python -m adaptive_gateway --port 8080
+python3 -m adaptive_gateway --port 8080   # src/ on path via pip install -e . OR:
+PYTHONPATH=src python3 -m adaptive_gateway --port 8080
 
 # 2. Route a request
 curl -s localhost:8080/route -H 'Content-Type: application/json' -d '{
@@ -109,7 +109,7 @@ sdk.close()
 ### Demo (representative end-to-end, mock providers)
 
 ```bash
-PYTHONPATH=src python -m demo.demo
+PYTHONPATH=src python3 -m demo.demo
 ```
 
 Covers: coding / private-data / vision / fast-task scenarios, plus failure→fallback,
@@ -152,7 +152,7 @@ Provider credentials (`GEMINI_API_KEY`, `DEEPSEEK_API_KEY`, `OPENAI_COMPAT_BASE_
 ## Evaluation
 
 ```bash
-PYTHONPATH=src python -m eval.harness   # writes eval/eval-results.json + eval/REPORT.md
+PYTHONPATH=src python3 -m eval.harness   # writes eval/eval-results.json + eval/REPORT.md
 ```
 
 10 offline scenarios (coding-hard, private-local-only, vision, fast-SLO, fallback-on-failure,
@@ -164,11 +164,11 @@ for the latest run. All numbers in the model catalog are synthetic scoring prior
 ## Tests / lint / typecheck / build
 
 ```bash
-python -m unittest discover -s tests -v   # zero-dependency test run
-python -m pytest -q                       # with dev extras installed
+python3 -m unittest discover -s tests -v   # zero-dependency test run
+python3 -m pytest -q                       # with dev extras installed
 ruff check src eval demo tests
 mypy src
-python -m compileall -q src eval demo tests  # build check (stdlib-only project)
+python3 -m compileall -q src eval demo tests  # build check (stdlib-only project)
 # or: make test | make lint | make typecheck | make eval | make demo
 ```
 
