@@ -1,0 +1,75 @@
+{
+  "_comment": "Synthetic offline eval scenarios. No live models, no real benchmarks. Each scenario asserts routing INVARIANTS (never exact live quality).",
+  "scenarios": [
+    {
+      "id": "coding-hard",
+      "description": "Hard coding task should prefer a strong code model (deepseek) when privacy is open.",
+      "request": {"prompt": "Refactor this async connection pool to eliminate the race on reconnect.", "task_type": "code", "difficulty": "hard", "context_tokens": 4000},
+      "provider_overrides": {},
+      "expect": {"ok": true, "hosted": "cloud", "must_rank_first_in": ["deepseek-chat-v3", "gemini-2.5-flash", "openai-compat-generic"]}
+    },
+    {
+      "id": "private-data-local-only",
+      "description": "Local-only private data must never route to cloud.",
+      "request": {"prompt": "Summarize these patient discharge notes.", "task_type": "private_data", "difficulty": "medium", "privacy_local_only": true, "context_tokens": 2000},
+      "provider_overrides": {},
+      "expect": {"ok": true, "hosted": "local", "forbidden_models": ["gemini-2.5-flash", "deepseek-chat-v3", "openai-compat-generic"]}
+    },
+    {
+      "id": "vision-needs-glimmer-or-cloud",
+      "description": "Vision request must land on a vision-capable model.",
+      "request": {"prompt": "Describe the chart in this screenshot.", "task_type": "vision", "difficulty": "medium", "needs_vision": true, "context_tokens": 1500},
+      "provider_overrides": {},
+      "expect": {"ok": true, "requires_capability": "vision"}
+    },
+    {
+      "id": "fast-tight-slo",
+      "description": "600ms SLO should prefer the fastest local model (bonsai).",
+      "request": {"prompt": "ping", "task_type": "fast", "difficulty": "easy", "max_latency_ms": 600, "context_tokens": 64},
+      "provider_overrides": {},
+      "expect": {"ok": true, "top_candidate": "bonsai-7b-local"}
+    },
+    {
+      "id": "fallback-on-primary-failure",
+      "description": "When the top pick errors, the router must fall back and still succeed.",
+      "request": {"prompt": "Write a quicksort in Rust.", "task_type": "code", "difficulty": "hard", "context_tokens": 1000},
+      "provider_overrides": {"deepseek-chat-v3": {"fail_mode": "error"}},
+      "expect": {"ok": true, "min_attempts": 2, "first_model_failed": "deepseek-chat-v3"}
+    },
+    {
+      "id": "retry-then-success-flaky",
+      "description": "Flaky provider should be retried within its attempt budget.",
+      "request": {"prompt": "Explain monads briefly.", "task_type": "chat", "difficulty": "easy", "context_tokens": 256},
+      "provider_overrides": {"bonsai-7b-local": {"fail_mode": "flaky", "latency_ms": 20}, "qwen3-8b-local": {"fail_mode": "error"}, "muse-7b-local": {"fail_mode": "error"}, "glimmer-vl-local": {"fail_mode": "error"}, "gemini-2.5-flash": {"fail_mode": "error"}, "deepseek-chat-v3": {"fail_mode": "error"}, "openai-compat-generic": {"fail_mode": "error"}},
+      "expect": {"ok": true, "min_attempts": 2}
+    },
+    {
+      "id": "timeout-fallback",
+      "description": "A provider that exceeds the per-provider timeout must be skipped via fallback.",
+      "request": {"prompt": "Summarize this doc.", "task_type": "fast", "difficulty": "easy", "max_latency_ms": 600, "context_tokens": 512},
+      "provider_overrides": {"bonsai-7b-local": {"fail_mode": "timeout"}},
+      "expect": {"ok": true, "min_attempts": 2, "failed_with_timeout": true}
+    },
+    {
+      "id": "escalation-all-fail",
+      "description": "Total outage must escalate with ALL_PROVIDERS_FAILED, not hallucinate text.",
+      "request": {"prompt": "Hello?", "task_type": "chat", "difficulty": "easy", "context_tokens": 64},
+      "provider_overrides": {"__all__": {"fail_mode": "error"}},
+      "expect": {"ok": false, "escalated": true, "error_code": "ALL_PROVIDERS_FAILED"}
+    },
+    {
+      "id": "escalation-no-safe-candidate",
+      "description": "Impossible constraints (local-only + vision + tiny window + huge context) must escalate NO_SAFE_CANDIDATE.",
+      "request": {"prompt": "x", "task_type": "vision", "difficulty": "easy", "privacy_local_only": true, "needs_vision": true, "context_tokens": 99999999},
+      "provider_overrides": {},
+      "expect": {"ok": false, "escalated": true, "error_code": "NO_SAFE_CANDIDATE"}
+    },
+    {
+      "id": "tools-require-function-calls",
+      "description": "Tool-use request must land on a tools-capable model.",
+      "request": {"prompt": "Book a flight using available functions.", "task_type": "tool_use", "difficulty": "medium", "needs_tools": true, "context_tokens": 2000},
+      "provider_overrides": {},
+      "expect": {"ok": true, "requires_capability": "tools"}
+    }
+  ]
+}

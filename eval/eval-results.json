@@ -1,0 +1,2703 @@
+{
+  "gateway_version": "0.1.0",
+  "generated_at": "2026-09-19T10:18:26.537099+00:00",
+  "mode": "offline-synthetic-mocks",
+  "disclaimer": "Synthetic offline fixtures with mock providers. Not a live benchmark; makes no quality/latency claims about real providers.",
+  "total": 10,
+  "passed": 10,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "scenarios": [
+    {
+      "id": "coding-hard",
+      "description": "Hard coding task should prefer a strong code model (deepseek) when privacy is open.",
+      "passed": true,
+      "notes": [
+        "hosted=cloud via deepseek-chat-v3",
+        "top rank deepseek-chat-v3 acceptable"
+      ],
+      "result": {
+        "request_id": "eval-coding-hard",
+        "ok": true,
+        "escalated": false,
+        "model_id": "deepseek-chat-v3",
+        "provider": "deepseek",
+        "text": "[deepseek]:deepseek-chat-v3 task=code diff=hard :: Refactor this async connection pool to eliminate the race on reconnect.",
+        "latency_ms": 120,
+        "cost_usd": 0.00015,
+        "attempts": [
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "attempt": 1,
+            "ok": true,
+            "latency_ms": 120,
+            "error_code": null,
+            "error_message": null,
+            "timeout_ms": 8000
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.7863,
+            "subscores": {
+              "task_affinity": 1.0,
+              "quality": 0.952,
+              "latency": 0.3,
+              "cost": 0.7692,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.7617,
+            "subscores": {
+              "task_affinity": 0.8,
+              "quality": 0.944,
+              "latency": 0.45,
+              "cost": 0.7143,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.7114,
+            "subscores": {
+              "task_affinity": 0.75,
+              "quality": 0.712,
+              "latency": 0.55,
+              "cost": 0.625,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_ADEQUATE",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.6853,
+            "subscores": {
+              "task_affinity": 0.85,
+              "quality": 0.144,
+              "latency": 0.55,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_WEAK_FOR_DIFFICULTY",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.6671,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.128,
+              "latency": 0.65,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_WEAK_FOR_DIFFICULTY",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.6012,
+            "subscores": {
+              "task_affinity": 0.55,
+              "quality": 0.136,
+              "latency": 0.4,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_WEAK_FOR_DIFFICULTY",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.5875,
+            "subscores": {
+              "task_affinity": 0.5,
+              "quality": 0.12,
+              "latency": 0.75,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 0.512,
+              "tools": 0.5,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_WEAK_FOR_DIFFICULTY",
+              "TOOL_NOT_NEEDED",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "private-data-local-only",
+      "description": "Local-only private data must never route to cloud.",
+      "passed": true,
+      "notes": [
+        "hosted=local via qwen3-8b-local"
+      ],
+      "result": {
+        "request_id": "eval-private-data-local-only",
+        "ok": true,
+        "escalated": false,
+        "model_id": "qwen3-8b-local",
+        "provider": "local-qwen",
+        "text": "[qwen]:qwen3-8b-local task=private_data diff=medium :: Summarize these patient discharge notes.",
+        "latency_ms": 120,
+        "cost_usd": 5e-05,
+        "attempts": [
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "attempt": 1,
+            "ok": true,
+            "latency_ms": 120,
+            "error_code": null,
+            "error_message": null,
+            "timeout_ms": 8000
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.8441,
+            "subscores": {
+              "task_affinity": 0.9,
+              "quality": 0.888,
+              "latency": 0.55,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK_LOCAL",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.8184,
+            "subscores": {
+              "task_affinity": 0.9,
+              "quality": 0.872,
+              "latency": 0.4,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK_LOCAL",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.8087,
+            "subscores": {
+              "task_affinity": 0.88,
+              "quality": 0.656,
+              "latency": 0.65,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK_LOCAL",
+              "QUALITY_ADEQUATE",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.8005,
+            "subscores": {
+              "task_affinity": 0.85,
+              "quality": 0.64,
+              "latency": 0.75,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.5,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK_LOCAL",
+              "QUALITY_ADEQUATE",
+              "TOOL_NOT_NEEDED",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "PRIVACY_VIOLATION"
+            ],
+            "excluded": true,
+            "exclude_reason": "cloud model for local-only task"
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "PRIVACY_VIOLATION"
+            ],
+            "excluded": true,
+            "exclude_reason": "cloud model for local-only task"
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "PRIVACY_VIOLATION"
+            ],
+            "excluded": true,
+            "exclude_reason": "cloud model for local-only task"
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "vision-needs-glimmer-or-cloud",
+      "description": "Vision request must land on a vision-capable model.",
+      "passed": true,
+      "notes": [
+        "capability vision satisfied by glimmer-vl-local"
+      ],
+      "result": {
+        "request_id": "eval-vision-needs-glimmer-or-cloud",
+        "ok": true,
+        "escalated": false,
+        "model_id": "glimmer-vl-local",
+        "provider": "local-glimmer",
+        "text": "[glimmer]:glimmer-vl-local task=vision diff=medium :: Describe the chart in this screenshot.",
+        "latency_ms": 120,
+        "cost_usd": 5e-05,
+        "attempts": [
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "attempt": 1,
+            "ok": true,
+            "latency_ms": 120,
+            "error_code": null,
+            "error_message": null,
+            "timeout_ms": 8000
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.8394,
+            "subscores": {
+              "task_affinity": 0.9,
+              "quality": 0.872,
+              "latency": 0.4,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.8183,
+            "subscores": {
+              "task_affinity": 0.9,
+              "quality": 0.944,
+              "latency": 0.45,
+              "cost": 0.8696,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.8015,
+            "subscores": {
+              "task_affinity": 0.8,
+              "quality": 0.912,
+              "latency": 0.55,
+              "cost": 0.8163,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "TOOL_MISSING_VISION"
+            ],
+            "excluded": true,
+            "exclude_reason": "vision required"
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "TOOL_MISSING_VISION"
+            ],
+            "excluded": true,
+            "exclude_reason": "vision required"
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "TOOL_MISSING_VISION"
+            ],
+            "excluded": true,
+            "exclude_reason": "vision required"
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "TOOL_MISSING_VISION"
+            ],
+            "excluded": true,
+            "exclude_reason": "vision required"
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "fast-tight-slo",
+      "description": "600ms SLO should prefer the fastest local model (bonsai).",
+      "passed": true,
+      "notes": [
+        "top rank bonsai-7b-local exact match"
+      ],
+      "result": {
+        "request_id": "eval-fast-tight-slo",
+        "ok": true,
+        "escalated": false,
+        "model_id": "bonsai-7b-local",
+        "provider": "local-bonsai",
+        "text": "[bonsai]:bonsai-7b-local task=fast diff=easy :: ping",
+        "latency_ms": 120,
+        "cost_usd": 5e-05,
+        "attempts": [
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "attempt": 1,
+            "ok": true,
+            "latency_ms": 120,
+            "error_code": null,
+            "error_message": null,
+            "timeout_ms": 600
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.773,
+            "subscores": {
+              "task_affinity": 0.95,
+              "quality": 0.84,
+              "latency": 0.1667,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.5,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_NOT_NEEDED",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.7152,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.856,
+              "latency": 0.0,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.7054,
+            "subscores": {
+              "task_affinity": 0.75,
+              "quality": 0.912,
+              "latency": 0.0,
+              "cost": 0.9905,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.7022,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.944,
+              "latency": 0.0,
+              "cost": 0.9936,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.7016,
+            "subscores": {
+              "task_affinity": 0.6,
+              "quality": 0.888,
+              "latency": 0.0,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.6784,
+            "subscores": {
+              "task_affinity": 0.5,
+              "quality": 0.872,
+              "latency": 0.0,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.6639,
+            "subscores": {
+              "task_affinity": 0.5,
+              "quality": 0.952,
+              "latency": 0.0,
+              "cost": 0.9952,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "fallback-on-primary-failure",
+      "description": "When the top pick errors, the router must fall back and still succeed.",
+      "passed": true,
+      "notes": [
+        "3 attempts (fallback/retry exercised)",
+        "fallback after deepseek-chat-v3 failure"
+      ],
+      "result": {
+        "request_id": "eval-fallback-on-primary-failure",
+        "ok": true,
+        "escalated": false,
+        "model_id": "gemini-2.5-flash",
+        "provider": "gemini",
+        "text": "[gemini]:gemini-2.5-flash task=code diff=hard :: Write a quicksort in Rust.",
+        "latency_ms": 120,
+        "cost_usd": 0.0002,
+        "attempts": [
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock deepseek-chat-v3 scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock deepseek-chat-v3 scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "attempt": 1,
+            "ok": true,
+            "latency_ms": 120,
+            "error_code": null,
+            "error_message": null,
+            "timeout_ms": 8000
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.8024,
+            "subscores": {
+              "task_affinity": 1.0,
+              "quality": 0.952,
+              "latency": 0.3,
+              "cost": 0.9302,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.7812,
+            "subscores": {
+              "task_affinity": 0.8,
+              "quality": 0.944,
+              "latency": 0.45,
+              "cost": 0.9091,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.7359,
+            "subscores": {
+              "task_affinity": 0.75,
+              "quality": 0.712,
+              "latency": 0.55,
+              "cost": 0.8696,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_ADEQUATE",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.6853,
+            "subscores": {
+              "task_affinity": 0.85,
+              "quality": 0.144,
+              "latency": 0.55,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_WEAK_FOR_DIFFICULTY",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.6671,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.128,
+              "latency": 0.65,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_WEAK_FOR_DIFFICULTY",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.6265,
+            "subscores": {
+              "task_affinity": 0.5,
+              "quality": 0.12,
+              "latency": 0.75,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.5,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_WEAK_FOR_DIFFICULTY",
+              "TOOL_NOT_NEEDED",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.6012,
+            "subscores": {
+              "task_affinity": 0.55,
+              "quality": 0.136,
+              "latency": 0.4,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_WEAK_FOR_DIFFICULTY",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "retry-then-success-flaky",
+      "description": "Flaky provider should be retried within its attempt budget.",
+      "passed": true,
+      "notes": [
+        "10 attempts (fallback/retry exercised)"
+      ],
+      "result": {
+        "request_id": "eval-retry-then-success-flaky",
+        "ok": true,
+        "escalated": false,
+        "model_id": "bonsai-7b-local",
+        "provider": "local-bonsai",
+        "text": "[bonsai]:bonsai-7b-local task=chat diff=easy :: Explain monads briefly.",
+        "latency_ms": 20,
+        "cost_usd": 5e-05,
+        "attempts": [
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock muse-7b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock muse-7b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock gemini-2.5-flash scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock gemini-2.5-flash scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock openai-compat-generic scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock openai-compat-generic scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock qwen3-8b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock qwen3-8b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock bonsai-7b-local flaky failure (odd call)",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "attempt": 2,
+            "ok": true,
+            "latency_ms": 20,
+            "error_code": null,
+            "error_message": null,
+            "timeout_ms": 8000
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.8127,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.856,
+              "latency": 0.65,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.8078,
+            "subscores": {
+              "task_affinity": 0.9,
+              "quality": 0.944,
+              "latency": 0.45,
+              "cost": 0.975,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.8052,
+            "subscores": {
+              "task_affinity": 0.85,
+              "quality": 0.912,
+              "latency": 0.55,
+              "cost": 0.963,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.8041,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.888,
+              "latency": 0.55,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.8005,
+            "subscores": {
+              "task_affinity": 0.65,
+              "quality": 0.84,
+              "latency": 0.75,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.5,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_NOT_NEEDED",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.7784,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.872,
+              "latency": 0.4,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.7675,
+            "subscores": {
+              "task_affinity": 0.8,
+              "quality": 0.952,
+              "latency": 0.3,
+              "cost": 0.9812,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "timeout-fallback",
+      "description": "A provider that exceeds the per-provider timeout must be skipped via fallback.",
+      "passed": true,
+      "notes": [
+        "3 attempts (fallback/retry exercised)",
+        "timeout attempt observed, fallback succeeded"
+      ],
+      "result": {
+        "request_id": "eval-timeout-fallback",
+        "ok": true,
+        "escalated": false,
+        "model_id": "muse-7b-local",
+        "provider": "local-muse",
+        "text": "[muse]:muse-7b-local task=fast diff=easy :: Summarize this doc.",
+        "latency_ms": 120,
+        "cost_usd": 5e-05,
+        "attempts": [
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_TIMEOUT",
+            "error_message": "mock bonsai-7b-local exceeded timeout",
+            "timeout_ms": 600
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_TIMEOUT",
+            "error_message": "mock bonsai-7b-local exceeded timeout",
+            "timeout_ms": 600
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "attempt": 1,
+            "ok": true,
+            "latency_ms": 120,
+            "error_code": null,
+            "error_message": null,
+            "timeout_ms": 600
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.773,
+            "subscores": {
+              "task_affinity": 0.95,
+              "quality": 0.84,
+              "latency": 0.1667,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.5,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_NOT_NEEDED",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.7152,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.856,
+              "latency": 0.0,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.7016,
+            "subscores": {
+              "task_affinity": 0.6,
+              "quality": 0.888,
+              "latency": 0.0,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.6993,
+            "subscores": {
+              "task_affinity": 0.75,
+              "quality": 0.912,
+              "latency": 0.0,
+              "cost": 0.9287,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.6979,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.944,
+              "latency": 0.0,
+              "cost": 0.9513,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.6784,
+            "subscores": {
+              "task_affinity": 0.5,
+              "quality": 0.872,
+              "latency": 0.0,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.6607,
+            "subscores": {
+              "task_affinity": 0.5,
+              "quality": 0.952,
+              "latency": 0.0,
+              "cost": 0.963,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_SLO_RISK",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": null
+      }
+    },
+    {
+      "id": "escalation-all-fail",
+      "description": "Total outage must escalate with ALL_PROVIDERS_FAILED, not hallucinate text.",
+      "passed": true,
+      "notes": [
+        "error code ALL_PROVIDERS_FAILED as expected"
+      ],
+      "result": {
+        "request_id": "eval-escalation-all-fail",
+        "ok": false,
+        "escalated": true,
+        "model_id": null,
+        "provider": null,
+        "text": null,
+        "latency_ms": null,
+        "cost_usd": null,
+        "attempts": [
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock muse-7b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock muse-7b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock gemini-2.5-flash scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock gemini-2.5-flash scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock openai-compat-generic scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock openai-compat-generic scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock qwen3-8b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock qwen3-8b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock bonsai-7b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock bonsai-7b-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock glimmer-vl-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock glimmer-vl-local scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "attempt": 1,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock deepseek-chat-v3 scripted failure",
+            "timeout_ms": 8000
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "attempt": 2,
+            "ok": false,
+            "latency_ms": null,
+            "error_code": "PROVIDER_ERROR",
+            "error_message": "mock deepseek-chat-v3 scripted failure",
+            "timeout_ms": 8000
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.8127,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.856,
+              "latency": 0.65,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.8097,
+            "subscores": {
+              "task_affinity": 0.9,
+              "quality": 0.944,
+              "latency": 0.45,
+              "cost": 0.9936,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.8079,
+            "subscores": {
+              "task_affinity": 0.85,
+              "quality": 0.912,
+              "latency": 0.55,
+              "cost": 0.9905,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.8041,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.888,
+              "latency": 0.55,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.8005,
+            "subscores": {
+              "task_affinity": 0.65,
+              "quality": 0.84,
+              "latency": 0.75,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.5,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_NOT_NEEDED",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.7784,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.872,
+              "latency": 0.4,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.7689,
+            "subscores": {
+              "task_affinity": 0.8,
+              "quality": 0.952,
+              "latency": 0.3,
+              "cost": 0.9952,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 0.7,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_AVAILABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": {
+          "code": "ALL_PROVIDERS_FAILED",
+          "message": "all 7 safe candidates failed; last: mock deepseek-chat-v3 scripted failure",
+          "provider": null,
+          "request_id": "eval-escalation-all-fail",
+          "retryable": false,
+          "details": {
+            "attempts": [
+              {
+                "model_id": "muse-7b-local",
+                "provider": "local-muse",
+                "attempt": 1,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock muse-7b-local scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "muse-7b-local",
+                "provider": "local-muse",
+                "attempt": 2,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock muse-7b-local scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "gemini-2.5-flash",
+                "provider": "gemini",
+                "attempt": 1,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock gemini-2.5-flash scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "gemini-2.5-flash",
+                "provider": "gemini",
+                "attempt": 2,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock gemini-2.5-flash scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "openai-compat-generic",
+                "provider": "openai-compat",
+                "attempt": 1,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock openai-compat-generic scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "openai-compat-generic",
+                "provider": "openai-compat",
+                "attempt": 2,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock openai-compat-generic scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "qwen3-8b-local",
+                "provider": "local-qwen",
+                "attempt": 1,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock qwen3-8b-local scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "qwen3-8b-local",
+                "provider": "local-qwen",
+                "attempt": 2,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock qwen3-8b-local scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "bonsai-7b-local",
+                "provider": "local-bonsai",
+                "attempt": 1,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock bonsai-7b-local scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "bonsai-7b-local",
+                "provider": "local-bonsai",
+                "attempt": 2,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock bonsai-7b-local scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "glimmer-vl-local",
+                "provider": "local-glimmer",
+                "attempt": 1,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock glimmer-vl-local scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "glimmer-vl-local",
+                "provider": "local-glimmer",
+                "attempt": 2,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock glimmer-vl-local scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "deepseek-chat-v3",
+                "provider": "deepseek",
+                "attempt": 1,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock deepseek-chat-v3 scripted failure",
+                "timeout_ms": 8000
+              },
+              {
+                "model_id": "deepseek-chat-v3",
+                "provider": "deepseek",
+                "attempt": 2,
+                "ok": false,
+                "latency_ms": null,
+                "error_code": "PROVIDER_ERROR",
+                "error_message": "mock deepseek-chat-v3 scripted failure",
+                "timeout_ms": 8000
+              }
+            ]
+          },
+          "hint": "escalate to human review / queue for later; no safe or successful model for this request"
+        }
+      }
+    },
+    {
+      "id": "escalation-no-safe-candidate",
+      "description": "Impossible constraints (local-only + vision + tiny window + huge context) must escalate NO_SAFE_CANDIDATE.",
+      "passed": true,
+      "notes": [
+        "error code NO_SAFE_CANDIDATE as expected"
+      ],
+      "result": {
+        "request_id": "eval-escalation-no-safe-candidate",
+        "ok": false,
+        "escalated": true,
+        "model_id": null,
+        "provider": null,
+        "text": null,
+        "latency_ms": null,
+        "cost_usd": null,
+        "attempts": [],
+        "ranked": [
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "CONTEXT_OVERFLOW"
+            ],
+            "excluded": true,
+            "exclude_reason": "context exceeds window"
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "PRIVACY_VIOLATION"
+            ],
+            "excluded": true,
+            "exclude_reason": "cloud model for local-only task"
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "PRIVACY_VIOLATION"
+            ],
+            "excluded": true,
+            "exclude_reason": "cloud model for local-only task"
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "CONTEXT_OVERFLOW"
+            ],
+            "excluded": true,
+            "exclude_reason": "context exceeds window"
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "CONTEXT_OVERFLOW"
+            ],
+            "excluded": true,
+            "exclude_reason": "context exceeds window"
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "PRIVACY_VIOLATION"
+            ],
+            "excluded": true,
+            "exclude_reason": "cloud model for local-only task"
+          },
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "CONTEXT_OVERFLOW"
+            ],
+            "excluded": true,
+            "exclude_reason": "context exceeds window"
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": {
+          "code": "NO_SAFE_CANDIDATE",
+          "message": "no safe candidate: privacy/context/capability/health gates excluded all models",
+          "provider": null,
+          "request_id": "eval-escalation-no-safe-candidate",
+          "retryable": false,
+          "details": {
+            "ranked": [
+              {
+                "model_id": "bonsai-7b-local",
+                "provider": "local-bonsai",
+                "score": 0.0,
+                "subscores": {},
+                "reason_codes": [
+                  "CONTEXT_OVERFLOW"
+                ],
+                "excluded": true,
+                "exclude_reason": "context exceeds window"
+              },
+              {
+                "model_id": "deepseek-chat-v3",
+                "provider": "deepseek",
+                "score": 0.0,
+                "subscores": {},
+                "reason_codes": [
+                  "PRIVACY_VIOLATION"
+                ],
+                "excluded": true,
+                "exclude_reason": "cloud model for local-only task"
+              },
+              {
+                "model_id": "gemini-2.5-flash",
+                "provider": "gemini",
+                "score": 0.0,
+                "subscores": {},
+                "reason_codes": [
+                  "PRIVACY_VIOLATION"
+                ],
+                "excluded": true,
+                "exclude_reason": "cloud model for local-only task"
+              },
+              {
+                "model_id": "glimmer-vl-local",
+                "provider": "local-glimmer",
+                "score": 0.0,
+                "subscores": {},
+                "reason_codes": [
+                  "CONTEXT_OVERFLOW"
+                ],
+                "excluded": true,
+                "exclude_reason": "context exceeds window"
+              },
+              {
+                "model_id": "muse-7b-local",
+                "provider": "local-muse",
+                "score": 0.0,
+                "subscores": {},
+                "reason_codes": [
+                  "CONTEXT_OVERFLOW"
+                ],
+                "excluded": true,
+                "exclude_reason": "context exceeds window"
+              },
+              {
+                "model_id": "openai-compat-generic",
+                "provider": "openai-compat",
+                "score": 0.0,
+                "subscores": {},
+                "reason_codes": [
+                  "PRIVACY_VIOLATION"
+                ],
+                "excluded": true,
+                "exclude_reason": "cloud model for local-only task"
+              },
+              {
+                "model_id": "qwen3-8b-local",
+                "provider": "local-qwen",
+                "score": 0.0,
+                "subscores": {},
+                "reason_codes": [
+                  "CONTEXT_OVERFLOW"
+                ],
+                "excluded": true,
+                "exclude_reason": "context exceeds window"
+              }
+            ]
+          },
+          "hint": "escalate to human review / queue for later; no safe or successful model for this request"
+        }
+      }
+    },
+    {
+      "id": "tools-require-function-calls",
+      "description": "Tool-use request must land on a tools-capable model.",
+      "passed": true,
+      "notes": [
+        "capability tools satisfied by qwen3-8b-local"
+      ],
+      "result": {
+        "request_id": "eval-tools-require-function-calls",
+        "ok": true,
+        "escalated": false,
+        "model_id": "qwen3-8b-local",
+        "provider": "local-qwen",
+        "text": "[qwen]:qwen3-8b-local task=tool_use diff=medium :: Book a flight using available functions.",
+        "latency_ms": 120,
+        "cost_usd": 5e-05,
+        "attempts": [
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "attempt": 1,
+            "ok": true,
+            "latency_ms": 120,
+            "error_code": null,
+            "error_message": null,
+            "timeout_ms": 8000
+          }
+        ],
+        "ranked": [
+          {
+            "model_id": "qwen3-8b-local",
+            "provider": "local-qwen",
+            "score": 0.8451,
+            "subscores": {
+              "task_affinity": 0.8,
+              "quality": 0.888,
+              "latency": 0.55,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "gemini-2.5-flash",
+            "provider": "gemini",
+            "score": 0.8146,
+            "subscores": {
+              "task_affinity": 0.9,
+              "quality": 0.944,
+              "latency": 0.45,
+              "cost": 0.8333,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "openai-compat-generic",
+            "provider": "openai-compat",
+            "score": 0.8068,
+            "subscores": {
+              "task_affinity": 0.85,
+              "quality": 0.912,
+              "latency": 0.55,
+              "cost": 0.7692,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "muse-7b-local",
+            "provider": "local-muse",
+            "score": 0.8037,
+            "subscores": {
+              "task_affinity": 0.75,
+              "quality": 0.656,
+              "latency": 0.65,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_ADEQUATE",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "glimmer-vl-local",
+            "provider": "local-glimmer",
+            "score": 0.7994,
+            "subscores": {
+              "task_affinity": 0.7,
+              "quality": 0.872,
+              "latency": 0.4,
+              "cost": 1.0,
+              "privacy": 1.0,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_OK",
+              "QUALITY_STRONG",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_MED"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "deepseek-chat-v3",
+            "provider": "deepseek",
+            "score": 0.7774,
+            "subscores": {
+              "task_affinity": 0.8,
+              "quality": 0.952,
+              "latency": 0.3,
+              "cost": 0.8696,
+              "privacy": 0.7,
+              "context": 1.0,
+              "tools": 1.0,
+              "health": 1.0,
+              "history": 0.5
+            },
+            "reason_codes": [
+              "CONTEXT_FIT",
+              "COST_DEFAULT",
+              "HEALTH_OK",
+              "HISTORY_NEUTRAL",
+              "LATENCY_DEFAULT",
+              "PRIVACY_CLOUD_OK",
+              "QUALITY_STRONG",
+              "TOOL_CAPABLE",
+              "TYPE_AFFINITY_HIGH"
+            ],
+            "excluded": false,
+            "exclude_reason": null
+          },
+          {
+            "model_id": "bonsai-7b-local",
+            "provider": "local-bonsai",
+            "score": 0.0,
+            "subscores": {},
+            "reason_codes": [
+              "TOOL_MISSING_FUNCTION_CALLS"
+            ],
+            "excluded": true,
+            "exclude_reason": "tools required"
+          }
+        ],
+        "weights": {
+          "task_affinity": 0.2,
+          "quality": 0.2,
+          "latency": 0.15,
+          "cost": 0.1,
+          "privacy": 0.1,
+          "context": 0.08,
+          "tools": 0.07,
+          "health": 0.05,
+          "history": 0.05
+        },
+        "error": null
+      }
+    }
+  ]
+}
