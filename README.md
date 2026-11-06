@@ -55,13 +55,14 @@ flowchart TB
 ## Setup
 
 ```bash
-git clone <this-repo> && cd adaptive-llm-gateway
+git clone https://github.com/zayyanla-hash/adaptive-llm-gateway.git
+cd adaptive-llm-gateway
 cp .env.example .env          # optional; defaults work with zero config
 # No runtime install needed (stdlib only). For dev tools:
 python3 -m pip install -e ".[dev]"
 ```
 
-Requires Python ≥ 3.10. No inference servers, no API keys, no paid APIs — ever.
+Requires Python ≥ 3.10. Default mock mode needs no inference servers, API keys, or paid APIs.
 
 ## Quickstart
 
@@ -164,7 +165,7 @@ for the latest run. All numbers in the model catalog are synthetic scoring prior
 ## Tests / lint / typecheck / build
 
 ```bash
-python3 -m unittest discover -s tests -v   # zero-dependency test run
+PYTHONPATH=src python3 -m unittest discover -s tests -v   # zero-dependency test run
 python3 -m pytest -q                       # with dev extras installed
 ruff check src eval demo tests
 mypy src
